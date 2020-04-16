@@ -1,0 +1,22 @@
+<div fxLayout="column">
+	<div fxLayout="row" fxLayoutGap="10px">
+		<agm-map fxFlex [latitude]="lat" [longitude]="lng" [zoom]="zoom" [disableDefaultUI]="false" [zoomControl]="false"
+			(mapClick)="mapClicked($event)" style="min-width:400px">
+			<agm-marker *ngFor="let m of markers; let i = index" (markerClick)="clickedMarker(m, i)" [latitude]="m.lat"
+				[longitude]="m.lng" [label]="m.label" [markerDraggable]="m.draggable" (dragEnd)="markerDragEnd(m, $event)">
+				<agm-info-window>
+					<b>
+						<div>name: {{m.name}}</div>
+						<div>address: {{m.address}}</div>
+						<div>Mob.: {{m.contactNumber}}</div>
+						<div>opening hour: {{m.openingHours}}</div>
+					</b>
+				</agm-info-window>
+			</agm-marker>
+		</agm-map>
+		<div>
+			<mat-card *ngFor="let m of markers; let i = index" style="margin:10px" (click)="clickedMarker(m, i)">
+				{{m.name}}</mat-card>
+		</div>
+	</div>
+</div>

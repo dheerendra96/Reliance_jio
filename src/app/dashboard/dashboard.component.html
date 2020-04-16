@@ -1,0 +1,23 @@
+<mat-toolbar color="primary">
+  <span>{{title}}</span>
+  <span class="spacer"></span>
+  <span>Welcome {{currentUser}}</span>
+  <button mat-icon-button [matMenuTriggerFor]="menu" aria-label="Example icon-button with a menu">
+    <mat-icon>more_vert</mat-icon>
+  </button>
+  <mat-menu #menu="matMenu">
+    <button mat-menu-item (click)="logout()">
+      <span>LogOut</span>
+    </button>
+
+  </mat-menu>
+</mat-toolbar>
+
+<div fxLayout fxLayoutGap="2px">
+  <mat-card flex class="fullHeightWidth">
+    <app-gmap [mapData]="dashboardData"></app-gmap>
+  </mat-card>
+  <mat-card flex class="fullHeightWidth">
+    <app-chart></app-chart>
+  </mat-card>
+</div>
