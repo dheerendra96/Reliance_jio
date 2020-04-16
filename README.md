@@ -1,16 +1,10 @@
-# RelianceJio
+This project provide authentication and authorization of rest Api With the help of JSON Web Token.
+We are using Fake backend data like user's Information. In actual PRoject we will store all the data in the database and get the records on the basis of tenant token.
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 8.3.19.
+This is just a sample We can provide access_Token + expiry_Time && refresh_Token + expiry_Time in actual project.
 
 ## install all the dependency 
 npm i
-## run the project 
-npm start
-## credentials for login
-1.
-username : user1
-password : user1
 
-2.
-username : user2
-password : user2
+## command to run the app
+npm start
